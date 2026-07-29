@@ -1,247 +1,116 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-  background: #0b1221;
-  color: #fff;
-}
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Arial, sans-serif; background: #020d1f; color: #fff; }
 
-.page {
-  min-height: 100vh;
-  padding: 24px;
-}
+.page { min-height: 100vh; padding: 12px 16px; }
 
-/* ----------- Header công ty ----------- */
-.company-header {
-  text-align: center;
-  margin-bottom: 8px;
-}
+.company-header { text-align: center; margin-bottom: 4px; }
+.company-header .so { color: #94a3b8; font-size: 14px; }
+.company-header .ten-cong-ty { color: #fbbf24; font-size: 26px; font-weight: 900; margin: 4px 0 2px; text-shadow: 0 0 20px rgba(251,191,36,0.4); }
+.company-header .mst { color: #94a3b8; font-size: 13px; }
 
-.company-header .so {
-  color: #9ca3af;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-}
+.title-row { text-align: center; margin: 6px 0 10px; }
+.title-row h1 { font-size: 28px; margin: 0; letter-spacing: 2px; }
 
-.company-header .ten-cong-ty {
-  color: #fbbf24;
-  font-size: 22px;
-  font-weight: 800;
-  margin: 6px 0 2px;
-  letter-spacing: 0.5px;
-}
-
-.company-header .mst {
-  color: #9ca3af;
-  font-size: 12px;
-}
-
-.title-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin: 18px 0 14px;
-}
-
-.title-row h1 {
-  font-size: 28px;
-  margin: 0;
-  letter-spacing: 1px;
-}
-
-.date-time-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  color: #cbd5e1;
-  padding: 12px 18px;
-  background: #0c1428;
-  border-bottom: 1px solid #1e293b;
-}
-
-.date-time-row .ngay-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 500;
-}
-
-.date-time-row .gio-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 700;
-  color: #fbbf24;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.5px;
-}
-
-/* ----------- Layout chính: bảng + biểu đồ ----------- */
-.main-layout {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
+/* Layout: bảng chiếm 70%, biểu đồ 30% */
+.main-layout { display: flex; gap: 12px; align-items: flex-start; }
 
 .board-wrapper {
-  flex: 1 1 720px;
-  background: #111c33;
+  flex: 0 0 70%;
+  background: #0a1628;
   border-radius: 12px;
-  border: 1px solid #1e293b;
+  border: 2px solid #2a4a7f;
   overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
 }
 
 .chart-wrapper {
-  flex: 1 1 360px;
-  background: #111c33;
+  flex: 0 0 calc(30% - 12px);
+  background: #0a1628;
   border-radius: 12px;
-  border: 1px solid #1e293b;
-  padding: 18px;
-  min-width: 320px;
+  border: 2px solid #2a4a7f;
+  padding: 12px;
 }
 
-/* ----------- Bảng giá ----------- */
-.price-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 15px;
-}
+/* Ngày giờ */
+.date-time-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 18px; background: #071020; border-bottom: 2px solid #2a4a7f; }
+.date-time-row .ngay-label { font-weight: 600; font-size: 17px; color: #e2e8f0; }
+.date-time-row .gio-label { font-weight: 900; color: #fbbf24; font-size: 22px; letter-spacing: 1px; font-variant-numeric: tabular-nums; }
+
+/* Bảng giá - TO và có KHUNG rõ ràng */
+.price-table { width: 100%; border-collapse: collapse; }
 
 .price-table th {
-  background: #1a2742;
-  color: #fb7185;
-  font-weight: 700;
-  padding: 12px 8px;
+  background: #0d1f3c;
+  color: #ff6b7a;
+  font-weight: 800;
+  padding: 14px 8px;
   text-align: center;
-  border-bottom: 1px solid #233152;
-  font-size: 14px;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  border: 2px solid #2a4a7f;
 }
 
 .price-table td {
   text-align: center;
-  padding: 14px 8px;
-  border-bottom: 1px solid #1c2740;
+  padding: 16px 8px;
+  border: 1.5px solid #1e3a5f;
   vertical-align: middle;
+  font-size: 20px;
 }
 
-.price-table tbody tr:nth-child(odd) {
-  background: #0f1830;
+/* Đường kẻ dọc đậm giữa 2 nhóm */
+.price-table td:nth-child(3),
+.price-table th:nth-child(3) {
+  border-right: 3px solid #3a6aaf;
 }
 
-.price-table tbody tr:nth-child(even) {
-  background: #111c33;
-}
+.price-table tbody tr:nth-child(odd) { background: #081829; }
+.price-table tbody tr:nth-child(even) { background: #0b1f36; }
+.price-table tbody tr:hover { background: #102848; }
 
 .loai-vang-cell {
-  color: #f1f5f9;
-  font-weight: 600;
+  color: #e2e8f0;
+  font-weight: 700;
   text-align: center;
   line-height: 1.3;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  font-size: 17px;
 }
 
 .gia-input {
-  width: 110px;
+  width: 130px;
   background: transparent;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   color: #fbbf24;
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: 900;
+  font-size: 20px;
   text-align: center;
-  padding: 6px 4px;
+  padding: 4px 2px;
   border-radius: 6px;
-  transition: border-color 0.15s ease;
+  transition: all 0.15s ease;
 }
-
-.gia-input:hover,
-.gia-input:focus {
+.gia-input:hover, .gia-input:focus {
   border-color: #fbbf24;
   outline: none;
-  background: #0b1221;
-}
-
-.save-row {
-  display: flex;
-  justify-content: center;
-  padding: 14px;
-  background: #0f1830;
-}
-
-.save-btn {
-  background: #fbbf24;
-  color: #1a1305;
-  font-weight: 700;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  letter-spacing: 0.3px;
-}
-
-.save-btn:hover {
-  background: #f3b006;
-}
-
-.save-status {
-  text-align: center;
-  font-size: 13px;
-  color: #4ade80;
-  padding-bottom: 10px;
-  min-height: 18px;
-}
-
-/* ----------- Biểu đồ ----------- */
-.chart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.chart-header h2 {
-  font-size: 16px;
-  margin: 0;
-  color: #f1f5f9;
-}
-
-.gold-select {
-  background: #0b1221;
+  background: #071020;
   color: #fff;
-  border: 1px solid #233152;
-  border-radius: 6px;
-  padding: 6px 10px;
-  font-size: 13px;
-  text-transform: uppercase;
 }
 
-.legend-line {
-  display: flex;
-  gap: 18px;
-  font-size: 12px;
-  margin-top: 6px;
-  color: #cbd5e1;
-}
+.save-status { text-align: center; font-size: 14px; color: #4ade80; padding: 6px; min-height: 20px; background: #071020; }
 
-.legend-dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-right: 6px;
-}
+.save-row { display: flex; justify-content: center; padding: 12px; background: #071020; border-top: 2px solid #2a4a7f; }
+.save-btn { background: #fbbf24; color: #1a1305; font-weight: 900; border: none; padding: 12px 36px; border-radius: 8px; cursor: pointer; font-size: 17px; box-shadow: 0 2px 16px rgba(251,191,36,0.4); }
+.save-btn:hover { background: #f3b006; }
+
+/* Biểu đồ nhỏ gọn */
+.chart-header { display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px; }
+.chart-header h2 { font-size: 13px; margin: 0; color: #e2e8f0; font-weight: 700; }
+.gold-select { background: #071020; color: #fff; border: 1px solid #1e3a5f; border-radius: 6px; padding: 4px 6px; font-size: 11px; width: 100%; }
+.legend-line { display: flex; gap: 12px; font-size: 11px; margin-top: 4px; color: #cbd5e1; }
+.legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
 
 @media (max-width: 900px) {
-  .main-layout {
-    flex-direction: column;
-  }
+  .main-layout { flex-direction: column; }
+  .board-wrapper, .chart-wrapper { flex: 0 0 100%; }
 }

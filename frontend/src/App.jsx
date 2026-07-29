@@ -10,7 +10,7 @@ export default function App() {
       <div className="company-header">
         <div className="so">SỞ KẾ HOẠCH VÀ ĐẦU TƯ QUẢNG NINH</div>
         <div className="ten-cong-ty">
-          DOANH NGHIỆP VÀNG BẠC TƯ NHÂN VĂN TRƯỜNG VTJ
+          DOANH NGHIỆP VÀNG BẠC TƯ NHÂN VĂN TRƯỜNG QUẢNG NINH
         </div>
         <div className="mst">MST: 5702158438</div>
       </div>

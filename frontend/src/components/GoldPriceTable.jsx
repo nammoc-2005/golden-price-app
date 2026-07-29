@@ -89,8 +89,9 @@ export default function GoldPriceTable({ onUpdated }) {
   };
 
   const cacThu = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
-  const ngayHienThi = `${cacThu[now.getDay()]}, ${now.toLocaleDateString('vi-VN')}`;
-  const gioHienThi = now.toLocaleTimeString('vi-VN', { hour12: false });
+  const vnTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }));
+  const ngayHienThi = `${cacThu[vnTime.getDay()]}, ${vnTime.toLocaleDateString('vi-VN')}`;
+  const gioHienThi = vnTime.toLocaleTimeString('vi-VN', { hour12: false });
 
   if (loading) {
     return <div className="board-wrapper" style={{ padding: 24 }}>Đang tải dữ liệu...</div>;

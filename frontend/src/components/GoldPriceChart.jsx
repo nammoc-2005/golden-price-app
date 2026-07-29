@@ -82,7 +82,7 @@ export default function GoldPriceChart({ refreshKey }) {
         {selectedName} · Đơn vị: nghìn đồng/chỉ
       </div>
 
-      <ResponsiveContainer width="100%" height={260}>
+      <ResponsiveContainer width="100%" height={150}>
         <LineChart data={history}>
           <CartesianGrid stroke="#1e293b" strokeDasharray="3 3" />
           <XAxis dataKey="ngay" stroke="#94a3b8" fontSize={12} />
