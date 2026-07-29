@@ -26,17 +26,26 @@ export default function GoldPriceTable({ onUpdated }) {
     return () => clearInterval(timer);
   }, []);
 
-  const loadData = async () => {
+  const loadData = async (retries = 5) => {
+  for (let i = 0; i < retries; i++) {
     try {
       const data = await fetchLatestPrices();
       setRows(data);
-    } catch (err) {
-      console.error(err);
-      setStatus('Không tải được dữ liệu. Kiểm tra backend đã chạy chưa.');
-    } finally {
+      setStatus('');
       setLoading(false);
+      return;
+    } catch (err) {
+      if (i === 0) {
+        setStatus('⏳ Đang kết nối server, vui lòng đợi...');
+      }
+      if (i < retries - 1) {
+        await new Promise((res) => setTimeout(res, 8000)); // đợi 8 giây rồi thử lại
+      }
     }
-  };
+  }
+  setStatus('❌ Không kết nối được server. Vui lòng tải lại trang.');
+  setLoading(false);
+};
 
   useEffect(() => {
     loadData();
@@ -94,8 +103,17 @@ export default function GoldPriceTable({ onUpdated }) {
   const gioHienThi = vnTime.toLocaleTimeString('vi-VN', { hour12: false });
 
   if (loading) {
-    return <div className="board-wrapper" style={{ padding: 24 }}>Đang tải dữ liệu...</div>;
-  }
+  return (
+    <div className="board-wrapper" style={{ padding: 32, textAlign: 'center' }}>
+      <div style={{ fontSize: 20, color: '#fbbf24', marginBottom: 12 }}>
+        {status || '⏳ Đang tải dữ liệu...'}
+      </div>
+      <div style={{ color: '#94a3b8', fontSize: 14 }}>
+        Server đang khởi động lại, thường mất 30–60 giây. Trang sẽ tự động cập nhật.
+      </div>
+    </div>
+  );
+}
 
   return (
     <div className="board-wrapper">
