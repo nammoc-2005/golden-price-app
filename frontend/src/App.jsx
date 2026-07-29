@@ -13,6 +13,7 @@ export default function App() {
           DOANH NGHIỆP VÀNG BẠC TƯ NHÂN VĂN TRƯỜNG QUẢNG NINH
         </div>
         <div className="mst">MST: 5702158438</div>
+        <div className="dia-chi">📍 238 Thống Nhất, Tiên Yên, Quảng Ninh &nbsp;|&nbsp; 📞 0911 034 444</div>
       </div>
 
       <div className="title-row">

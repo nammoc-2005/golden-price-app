@@ -114,3 +114,10 @@ body { margin: 0; font-family: 'Segoe UI', Tahoma, Arial, sans-serif; background
   .main-layout { flex-direction: column; }
   .board-wrapper, .chart-wrapper { flex: 0 0 100%; }
 }
+
+.company-header .dia-chi {
+  color: #cbd5e1;
+  font-size: 14px;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
