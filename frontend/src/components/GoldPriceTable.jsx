@@ -183,10 +183,13 @@ export default function GoldPriceTable({ onUpdated }) {
       </table>
 
       <div className="save-status">{status}</div>
-      <div className="save-row">
+            <div className="save-row">
         <button className="save-btn" onClick={handleSaveAll}>
           Lưu giá vàng
         </button>
+      </div>
+      <div className="disclaimer">
+        ⚠️ BẢNG TỶ GIÁ VÀNG TRÊN CHƯA BAO GỒM GIÁ CÔNG CÁC SẢN PHẨM VÀNG TRANG SỨC
       </div>
     </div>
   );

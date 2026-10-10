@@ -230,3 +230,14 @@ body {
   .board-wrapper,
   .chart-wrapper { flex: 0 0 100%; }
 }
+
+.disclaimer {
+  text-align: center;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.4);
+  color: #FFD700;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255,200,200,0.2);
+}
